@@ -1,0 +1,18 @@
+﻿using LocalWishlistBE.Models;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace LocalWishlistBE.Entities
+{
+    public class RepositoryContext: DbContext
+    {
+        public RepositoryContext(DbContextOptions options)
+            : base(options)
+        {
+        }
+        public DbSet<Item> Items { get; set; }
+    }
+}
