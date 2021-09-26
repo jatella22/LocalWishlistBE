@@ -30,6 +30,7 @@ namespace LocalWishlistBE
             services.ConfigureIISIntegration();
             services.ConfigureMySqlContext(Configuration);
             services.ConfigureRepositoryWrapper();
+            services.ConfigureAuthService(Configuration);
             services.AddControllers();
         }
 
@@ -49,6 +50,9 @@ namespace LocalWishlistBE
             });
 
             app.UseRouting();
+
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseCors("CorsPolicy");
 
