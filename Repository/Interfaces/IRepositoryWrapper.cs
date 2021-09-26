@@ -8,6 +8,7 @@ namespace LocalWishlistBE.Repository.Interfaces
     public interface IRepositoryWrapper
     {
         IItemRepository Item { get; }
+        IUserRepository User { get; }
         void Save();
     }
 }

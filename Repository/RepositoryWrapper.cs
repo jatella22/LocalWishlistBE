@@ -11,6 +11,7 @@ namespace LocalWishlistBE.Repository
     {
         private RepositoryContext _repoContext;
         private IItemRepository _item;
+        private IUserRepository _user;
 
         public IItemRepository Item
         {
@@ -21,6 +22,18 @@ namespace LocalWishlistBE.Repository
                     _item = new ItemRepository(_repoContext);
                 }
                 return _item;
+            }
+        }
+
+        public IUserRepository User
+        {
+            get
+            {
+                if (_user == null)
+                {
+                    _user = new UserRepository(_repoContext);
+                }
+                return _user;
             }
         }
 
